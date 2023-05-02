@@ -1,0 +1,80 @@
+.navigation {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+
+  .container {
+    width: 100%;
+    // max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+
+    .logoWrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .logo {
+        font-size: 50px;
+        color: hsla(181, 49%, 64%, 1);
+      }
+
+      .textWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-family: Dosis;
+          font-size: 28px;
+          font-weight: 600;
+          color: hsla(222, 18%, 11%, 1);
+        }
+
+        .description {
+          font-size: 15px;
+          color: hsla(190, 8%, 42%, 1);
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 35px;
+
+      .link {
+        color: hsla(223, 26%, 21%, 1);
+        font-weight: 500;
+
+        &:hover {
+          color: hsla(203, 33%, 60%, 1);
+        }
+      }
+    }
+
+    .location {
+      color: hsla(203, 33%, 60%, 1);
+      font-weight: 500;
+
+      .icon {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+    }
+
+    .profile {
+      padding: 8px 30px;
+      background-color: rgb(92, 100, 163);
+      border-radius: 10px;
+      //   color: hsla(223, 26%, 21%, 1);
+      color: white;
+    }
+  }
+}
