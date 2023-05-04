@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dental-realtime-database": {
+      "hosting": {
+        "30.04.23": [
+          "dental-realtime-database"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dental-realtime-database"
+  }
+}
