@@ -15,9 +15,12 @@
     </ul>
     <ul>
       <li class="location">
-        <span class="icon icon-location"></span>Astana, Kazakhstan
+        <span class="icon icon-location"></span>Astana Kazakhstan
       </li>
-      <li><a routerLink="/" class="profile">Profile</a></li>
+      <li>
+        <a routerLink="/profile" class="profile" *ngIf="isAuth">Profile</a>
+        <a routerLink="/auth/login" class="profile" *ngIf="!isAuth">Auth</a>
+      </li>
     </ul>
   </div>
 </div>

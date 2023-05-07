@@ -1,3 +1,9 @@
+@mixin break($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
 .navigation {
   position: fixed;
   width: 100vw;
@@ -17,6 +23,14 @@
     align-items: center;
     padding: 0 80px;
 
+    @include break(1280px) {
+      padding: 0 50px;
+    }
+
+    @include break(1024px) {
+      padding: 0 30px;
+    }
+
     .logoWrapper {
       display: flex;
       align-items: center;
@@ -31,6 +45,10 @@
         display: flex;
         flex-direction: column;
 
+        @include break(768px) {
+          display: none;
+        }
+
         .title {
           font-family: Dosis;
           font-size: 28px;
@@ -41,6 +59,10 @@
         .description {
           font-size: 15px;
           color: hsla(190, 8%, 42%, 1);
+
+          @include break(1280px) {
+            display: none;
+          }
         }
       }
     }
@@ -48,6 +70,10 @@
     ul {
       display: flex;
       gap: 35px;
+
+      @include break(1280px) {
+        gap: 20px;
+      }
 
       .link {
         color: hsla(223, 26%, 21%, 1);
@@ -63,6 +89,12 @@
       color: hsla(203, 33%, 60%, 1);
       font-weight: 500;
 
+      @include break(1024px) {
+        max-width: 75px;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
       .icon {
         font-size: 18px;
         margin-right: 5px;
@@ -71,7 +103,7 @@
 
     .profile {
       padding: 8px 30px;
-      background-color: rgb(92, 100, 163);
+      background-color: hsla(233, 28%, 50%, 1);
       border-radius: 10px;
       //   color: hsla(223, 26%, 21%, 1);
       color: white;
