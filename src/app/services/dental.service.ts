@@ -11,11 +11,11 @@ export class DentalService {
 
   url: string = "https://dental-realtime-database-default-rtdb.firebaseio.com";
 
-  getServices() {
-    return this.http.get<IService[]>(`${this.url}/services.json`);
-  }
+  // getServices() {
+  //   return this.http.get<IService[]>(`${this.url}/services.json`);
+  // }
 
-  getDentists() {
-    return this.http.get<IDentist[]>(`${this.url}/dentists.json`);
-  }
+  // getDentists() {
+  //   return this.http.get<IDentist[]>(`${this.url}/dentists.json`);
+  // }
 }

@@ -15,6 +15,12 @@ import { CardsCarouselComponent } from "./components/cards-carousel/cards-carous
 import { DentistCardComponent } from "./components/dentist-card/dentist-card.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FooterComponent } from "./components/footer/footer.component";
+import { initializeApp, provideFirebaseApp } from "@angular/fire/app";
+import { environment } from "src/environments/environment";
+import { getFirestore, provideFirestore } from "@angular/fire/firestore";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { getDatabase, provideDatabase } from "@angular/fire/database";
 
 @NgModule({
   declarations: [
@@ -35,6 +41,11 @@ import { FooterComponent } from "./components/footer/footer.component";
     BrowserAnimationsModule,
     CarouselModule,
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

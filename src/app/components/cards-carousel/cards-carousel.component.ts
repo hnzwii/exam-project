@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Database, onValue, ref } from "@angular/fire/database";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { DentalService } from "src/app/services/dental.service";
 import { IDentist } from "src/app/shared/dentist";
@@ -36,12 +37,24 @@ export class CardsCarouselComponent implements OnInit {
 
   dentists!: IDentist[];
 
-  constructor(private dentalService: DentalService) {}
+  constructor(
+    private dentalService: DentalService,
+    private database: Database
+  ) {}
 
   ngOnInit(): void {
-    this.dentalService.getDentists().subscribe((res) => {
-      this.dentists = res;
-      console.log(res);
+    // this.dentalService.getDentists().subscribe((res) => {
+    //   this.dentists = res;
+    //   console.log(res);
+    // });
+
+    const starCountRef = ref(this.database, `dentists/`);
+    console.log(this.database, starCountRef);
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(this.database, data);
+      this.dentists = data;
+      console.log(this.dentists);
     });
   }
 }
