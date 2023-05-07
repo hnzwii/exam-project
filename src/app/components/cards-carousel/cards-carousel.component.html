@@ -1,0 +1,12 @@
+<div class="carousel">
+  <div class="category">OUR DENTISTS</div>
+  <div class="title">Professional Staff</div>
+
+  <div class="wrapper">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let dentist of dentists">
+        <app-dentist-card [dentist]="dentist"></app-dentist-card>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
