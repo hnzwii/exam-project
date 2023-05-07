@@ -1,0 +1,51 @@
+.card {
+  width: 260px;
+  height: 320px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+  padding: 35px 25px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    .serviceName {
+      text-transform: capitalize;
+      color: hsla(233, 28%, 50%, 1);
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .imgWrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50px;
+      overflow: hidden;
+      //   border: 1px solid black;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .definition {
+    text-align: center;
+    color: hsla(190, 8%, 42%, 1);
+    line-height: 20px;
+  }
+
+  .link {
+    color: hsla(223, 26%, 21%, 1);
+    line-height: 20px;
+    border-bottom: 1px solid hsla(223, 26%, 21%, 1);
+  }
+}

@@ -1,0 +1,16 @@
+<div class="servicesGroup">
+  <div class="category">OUR SERVICES</div>
+  <div class="title">- What We Offer for You -</div>
+  <div class="description">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut illo neque
+    labore architecto ad mollitia fugiat nesciunt et rem, natus voluptatum a,
+    impedit necessitatibus eius! Iure praesentium mollitia atque, ratione velit
+    voluptate magni placeat soluta.
+  </div>
+  <div class="gridWrapper">
+    <app-service-card
+      *ngFor="let service of services"
+      [service]="service"
+    ></app-service-card>
+  </div>
+</div>

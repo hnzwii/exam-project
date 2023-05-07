@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="wrapper">
+    <div class="imgWrapper">
+      <img src="{{ service.icon }}" alt="" />
+    </div>
+    <div class="serviceName">{{ service.serviceName }}</div>
+  </div>
+  <div class="definition">{{ service.definition }}</div>
+  <a routerLink="/service/{{ service.id }}" class="link">see more</a>
+</div>
