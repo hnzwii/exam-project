@@ -21,6 +21,7 @@ import { getFirestore, provideFirestore } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { getDatabase, provideDatabase } from "@angular/fire/database";
+import { ProfileModule } from "./components/profile/profile.module";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { getDatabase, provideDatabase } from "@angular/fire/database";
     provideDatabase(() => getDatabase()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    ProfileModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
