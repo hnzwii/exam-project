@@ -14,4 +14,9 @@ export class ProfileComponent {
     this.user = authService.user;
     console.log(this.user);
   }
+
+  logout() {
+    localStorage.removeItem("User");
+    window.location.reload();
+  }
 }
