@@ -23,9 +23,9 @@ export class RegisterComponent {
 
       this.authService.register(user).then((res) => {
         localStorage.setItem("User", JSON.stringify(res.user));
-        this.router.navigate(["/"]);
+        // this.router.navigate(["/"]);
 
-        // window.location.reload();
+        window.location.reload();
       });
     } else {
       console.log("Enter username, email, password");

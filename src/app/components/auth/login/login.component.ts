@@ -27,7 +27,8 @@ export class LoginComponent {
           console.log(res);
           localStorage.setItem("User", JSON.stringify(res.user));
           this.authService.setUser();
-          this.router.navigate(["/"]);
+          // this.router.navigate(["/"]);
+          window.location.reload();
         })
         .catch((err) => console.log(err));
 
