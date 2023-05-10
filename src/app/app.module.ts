@@ -22,6 +22,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { getDatabase, provideDatabase } from "@angular/fire/database";
 import { ProfileModule } from "./components/profile/profile.module";
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProfileModule } from "./components/profile/profile.module";
     CardsCarouselComponent,
     DentistCardComponent,
     FooterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

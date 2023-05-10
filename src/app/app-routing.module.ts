@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./components/main/main.component";
 import { AuthGuard } from "./shared/auth.guard";
 import { ProfileGuard } from "./shared/profile.guard";
+import { AboutComponent } from "./components/about/about.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
       ),
     canActivate: [ProfileGuard],
   },
+  { path: "about", component: AboutComponent },
 ];
 
 @NgModule({
