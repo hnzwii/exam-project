@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { getDatabase, provideDatabase } from "@angular/fire/database";
 import { ProfileModule } from "./components/profile/profile.module";
 import { AboutComponent } from './components/about/about.component';
+import { DentistComponent } from './components/dentist/dentist.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AboutComponent } from './components/about/about.component';
     DentistCardComponent,
     FooterComponent,
     AboutComponent,
+    DentistComponent,
   ],
   imports: [
     BrowserModule,
