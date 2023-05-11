@@ -116,4 +116,43 @@
       }
     }
   }
+
+  .dentistsInfo {
+    width: 100%;
+    background-color: hsla(223, 26%, 21%, 1);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+
+    .content {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .category {
+        font-weight: 500;
+        color: hsla(233, 28%, 50%, 1);
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 25px;
+        font-family: Dosis;
+        color: hsla(138, 33%, 94%, 1);
+      }
+
+      p {
+        color: hsla(138, 33%, 94%, 1);
+        line-height: 20px;
+      }
+    }
+  }
+
+  .showButton {
+    margin: 10px 0;
+    color: hsla(203, 33%, 60%, 1);
+    font-weight: 500;
+  }
 }

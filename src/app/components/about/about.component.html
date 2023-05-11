@@ -48,4 +48,27 @@
       </div>
     </div>
   </div>
+  <div class="dentistsInfo">
+    <div class="content">
+      <div class="category">MEDICAL STAFF</div>
+      <div class="title">Best Doctor Specialist</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error ut cum
+        voluptatum eveniet! Dolorem, quam dignissimos a eos quisquam porro
+        recusandae. Recusandae quas repellat debitis iure accusamus libero a,
+        rerum illum dolore quos minus nam modi temporibus?
+      </p>
+    </div>
+  </div>
+
+  <div *ngFor="let dentist of dentists; let i = index">
+    <app-dentist *ngIf="i < limit" [dentist]="dentist"></app-dentist>
+  </div>
+  <button class="showButton" (click)="showMore()" *ngIf="show === true">
+    Show more
+  </button>
+  <button class="showButton" (click)="showLess()" *ngIf="show === false">
+    Show less
+  </button>
+  <section style="margin: 60px"></section>
 </div>
