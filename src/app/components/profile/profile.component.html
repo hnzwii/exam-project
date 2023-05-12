@@ -13,7 +13,16 @@
       </div>
       <div class="email">{{ user.email }}</div>
     </div>
+    <div class="reviews">
+      <div class="title">Add your review</div>
+      <textarea
+        [(ngModel)]="review"
+        placeholder="Leave your review here..."
+      ></textarea>
+      <button (click)="sendReview()">Send</button>
+    </div>
   </div>
+
   <div class="appointmentInfo">
     <div class="title">Appointments</div>
     <div class="appointmentsWrapper"></div>
