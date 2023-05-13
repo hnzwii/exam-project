@@ -70,5 +70,33 @@
   <button class="showButton" (click)="showLess()" *ngIf="show === false">
     Show less
   </button>
-  <section style="margin: 60px"></section>
+  <div class="reviews">
+    <div class="wrapper">
+      <div class="category">REVIEWS</div>
+      <div class="content">
+        <app-review
+          *ngFor="
+            let review of reviews
+              | paginate
+                : {
+                    itemsPerPage: pageSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index
+          "
+          [review]="review"
+        ></app-review>
+      </div>
+      <div class="pagination">
+        <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          [responsive]="true"
+          (pageChange)="handlePageChange($event)"
+        ></pagination-controls>
+      </div>
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>

@@ -131,11 +131,6 @@
       flex-direction: column;
       gap: 20px;
 
-      .category {
-        font-weight: 500;
-        color: hsla(233, 28%, 50%, 1);
-      }
-
       .title {
         font-weight: 600;
         font-size: 25px;
@@ -150,9 +145,38 @@
     }
   }
 
+  .category {
+    font-weight: 500;
+    color: hsla(233, 28%, 50%, 1);
+  }
+
   .showButton {
     margin: 10px 0;
     color: hsla(203, 33%, 60%, 1);
     font-weight: 500;
+  }
+
+  .reviews {
+    margin-top: 80px;
+    width: 100%;
+    background-color: rgb(235, 244, 245);
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+
+    .wrapper {
+      width: 100%;
+      max-width: 1280px;
+      .content {
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

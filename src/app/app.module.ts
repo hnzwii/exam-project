@@ -22,8 +22,10 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { getDatabase, provideDatabase } from "@angular/fire/database";
 import { ProfileModule } from "./components/profile/profile.module";
-import { AboutComponent } from './components/about/about.component';
-import { DentistComponent } from './components/dentist/dentist.component';
+import { AboutComponent } from "./components/about/about.component";
+import { DentistComponent } from "./components/dentist/dentist.component";
+import { ReviewComponent } from "./components/review/review.component";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DentistComponent } from './components/dentist/dentist.component';
     FooterComponent,
     AboutComponent,
     DentistComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { DentistComponent } from './components/dentist/dentist.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     ProfileModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
