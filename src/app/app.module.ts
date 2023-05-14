@@ -26,6 +26,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { DentistComponent } from "./components/dentist/dentist.component";
 import { ReviewComponent } from "./components/review/review.component";
 import { NgxPaginationModule } from "ngx-pagination";
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NgxPaginationModule } from "ngx-pagination";
     AboutComponent,
     DentistComponent,
     ReviewComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,

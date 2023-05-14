@@ -1,0 +1,73 @@
+<div class="contacts">
+  <div class="info">
+    <div class="flex">
+      <div class="icon-whatsapp icon"></div>
+      <div>
+        <div class="title">Call The Office</div>
+        <div>+7 777 777 77 77</div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="icon-location icon"></div>
+      <div>
+        <div class="title">Office location</div>
+        <div>Turan 46A, Astana Kazakhstan</div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="icon-google icon"></div>
+      <div>
+        <div class="title">Email Us</div>
+        <div>some@gmail.com</div>
+      </div>
+    </div>
+  </div>
+  <div class="title">BOOK AN APPOINTMENT</div>
+
+  <form action="">
+    <div class="groupWrapper">
+      <input type="text" placeholder="FULLNAME" />
+      <input type="tel" name="" id="" placeholder="PHONE NUMBER" />
+    </div>
+    <div class="groupWrapper">
+      <select name="" id="">
+        <option *ngFor="let dentist of dentists" value="{{ dentist.fullname }}">
+          {{ dentist.fullname }}
+        </option>
+      </select>
+      <select name="" id="">
+        <option
+          *ngFor="let service of services"
+          value="{{ service.serviceName }}"
+        >
+          {{ service.serviceName }}
+        </option>
+      </select>
+    </div>
+    <div class="groupWrapper">
+      <input type="date" name="" id="" />
+      <span>TOTAL : {{ total | currency }}</span>
+    </div>
+    <button>Send</button>
+  </form>
+  <div class="title">LOCATION</div>
+  <div class="map">
+    <div style="position: relative; overflow: hidden">
+      <a
+        href="https://yandex.kz/maps/163/astana/?utm_medium=mapframe&utm_source=maps"
+        style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+        >Астана</a
+      ><a
+        href="https://yandex.kz/maps/163/astana/house/Y0gYdQ5pTkEEQFtrfX1wcH1kZg==/?from=tabbar&ll=71.399743%2C51.111173&source=serp_navig&utm_medium=mapframe&utm_source=maps&z=17.14"
+        style="color: #eee; font-size: 12px; position: absolute; top: 14px"
+        >Проспект Туран, 46А — Яндекс Карты</a
+      ><iframe
+        src="https://yandex.kz/map-widget/v1/?from=tabbar&ll=71.399743%2C51.111173&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0MTcyNTQ4ODk5EkHSmtCw0LfQsNKb0YHRgtCw0L0sINCQ0YHRgtCw0L3QsCwg0KLSsdGA0LDQvSDQtNCw0qPSk9GL0LvRiywgNDbQkCIKDavMjkIV13FMQg%2C%2C&source=serp_navig&z=17.14"
+        frameborder="1"
+        allowfullscreen="true"
+        style="position: relative"
+      ></iframe>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

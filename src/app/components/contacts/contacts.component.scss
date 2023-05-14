@@ -1,0 +1,94 @@
+.contacts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 80px;
+  gap: 80px;
+
+  .info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding: 40px;
+    background-color: hsla(203, 33%, 60%, 1);
+    color: white;
+    font-family: Dosis;
+
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .icon {
+        font-size: 22px;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 35px;
+        color: white;
+      }
+    }
+  }
+
+  .title {
+    font-size: 22px;
+    font-weight: 500;
+    color: hsla(223, 26%, 21%, 1);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    input,
+    select {
+      padding: 15px 20px;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 10px 0px hsla(190, 8%, 42%, 0.5);
+      text-transform: capitalize;
+
+      &:focus {
+        border: 1px solid #444;
+      }
+    }
+
+    .groupWrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      span {
+        font-family: Dosis;
+        font-weight: 600;
+      }
+    }
+
+    button {
+      background-color: hsla(233, 28%, 50%, 1);
+      width: 150px;
+      height: 35px;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  .map {
+    width: 100%;
+    max-width: 1280px;
+
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}

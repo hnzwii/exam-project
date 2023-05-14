@@ -4,6 +4,7 @@ import { MainComponent } from "./components/main/main.component";
 import { AuthGuard } from "./shared/auth.guard";
 import { ProfileGuard } from "./shared/profile.guard";
 import { AboutComponent } from "./components/about/about.component";
+import { ContactsComponent } from "./components/contacts/contacts.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     canActivate: [ProfileGuard],
   },
   { path: "about", component: AboutComponent },
+  { path: "contacts", component: ContactsComponent },
 ];
 
 @NgModule({
