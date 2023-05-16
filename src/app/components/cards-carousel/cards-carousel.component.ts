@@ -48,9 +48,9 @@ export class CardsCarouselComponent implements OnInit {
     //   console.log(res);
     // });
 
-    const starCountRef = ref(this.database, `dentists/`);
-    console.log(this.database, starCountRef);
-    onValue(starCountRef, (snapshot) => {
+    const dentistRef = ref(this.database, `dentists/`);
+    console.log(this.database, dentistRef);
+    onValue(dentistRef, (snapshot) => {
       const data = snapshot.val();
       console.log(this.database, data);
       this.dentists = data;

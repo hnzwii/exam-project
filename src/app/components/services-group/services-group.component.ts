@@ -22,9 +22,9 @@ export class ServicesGroupComponent implements OnInit {
     //   this.services = res;
     //   console.log(res);
     // });
-    const starCountRef = ref(this.database, `services/`);
-    console.log(this.database, starCountRef);
-    onValue(starCountRef, (snapshot) => {
+    const servicesRef = ref(this.database, `services/`);
+    console.log(this.database, servicesRef);
+    onValue(servicesRef, (snapshot) => {
       const data = snapshot.val();
       console.log(this.database, data);
       this.services = data;
