@@ -5,6 +5,8 @@ import { AuthGuard } from "./shared/auth.guard";
 import { ProfileGuard } from "./shared/profile.guard";
 import { AboutComponent } from "./components/about/about.component";
 import { ContactsComponent } from "./components/contacts/contacts.component";
+import { ServicesComponent } from "./components/services/services.component";
+import { SingleServiceComponent } from "./components/single-service/single-service.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   },
   { path: "about", component: AboutComponent },
   { path: "contacts", component: ContactsComponent },
+  { path: "services", component: ServicesComponent },
+  { path: "services/:id", component: SingleServiceComponent },
 ];
 
 @NgModule({
