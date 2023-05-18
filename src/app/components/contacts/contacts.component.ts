@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { Database, onValue, ref } from "@angular/fire/database";
+import { Database, onValue, ref, set } from "@angular/fire/database";
 import { FormControl, FormGroup } from "@angular/forms";
+import { AuthService } from "src/app/services/auth.service";
 import { IDentist } from "src/app/shared/dentist";
 import { IService, Types } from "src/app/shared/service";
 
@@ -16,17 +17,24 @@ export class ContactsComponent implements OnInit {
   serviceType!: Types;
   service!: IService;
   total: number = 0;
+  isAuth!: boolean;
 
   contactForm = new FormGroup({
     fullname: new FormControl(""),
-    phone: new FormControl(""),
+    phone: new FormControl(),
     dentist: new FormControl(""),
     service: new FormControl(),
     serviceType: new FormControl(),
     date: new FormControl(""),
   });
 
-  constructor(private database: Database) {}
+  constructor(private database: Database, private authService: AuthService) {
+    if (authService.user) {
+      this.isAuth = true;
+    } else {
+      this.isAuth = false;
+    }
+  }
   getTypes(): void {
     // console.log(this.service);
 
@@ -72,5 +80,23 @@ export class ContactsComponent implements OnInit {
 
   send() {
     console.log(this.contactForm.value);
+
+    const appointment = {
+      email: this.authService.user.email,
+      info: {
+        ...this.contactForm.value,
+        service: this.contactForm.value.service?.serviceName,
+        serviceType: this.contactForm.value.serviceType?.name,
+        price: this.contactForm.value.serviceType?.price,
+      },
+    };
+
+    const id = new Date().getTime();
+
+    set(ref(this.database, `appointments/${id}`), {
+      ...appointment,
+    });
+
+    this.contactForm.reset();
   }
 }

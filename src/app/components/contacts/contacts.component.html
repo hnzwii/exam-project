@@ -50,7 +50,7 @@
         name=""
         id=""
         formControlName="serviceType"
-        (click)="getTotalPrice()"
+        (change)="getTotalPrice()"
       >
         <option
           *ngFor="let serviceType of servicesTypes"
@@ -64,7 +64,8 @@
       <input type="date" name="" id="" formControlName="date" />
       <span>TOTAL : {{ total | currency }}</span>
     </div>
-    <button>Send</button>
+    <button *ngIf="isAuth">Send</button>
+    <a *ngIf="!isAuth" routerLink="/auth">Send</a>
   </form>
   <div class="title">LOCATION</div>
   <div class="map">
