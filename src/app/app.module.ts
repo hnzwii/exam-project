@@ -26,7 +26,10 @@ import { AboutComponent } from "./components/about/about.component";
 import { DentistComponent } from "./components/dentist/dentist.component";
 import { ReviewComponent } from "./components/review/review.component";
 import { NgxPaginationModule } from "ngx-pagination";
-import { ContactsComponent } from './components/contacts/contacts.component';
+import { ContactsComponent } from "./components/contacts/contacts.component";
+import { ServicesComponent } from "./components/services/services.component";
+import { SingleServiceComponent } from "./components/single-service/single-service.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     DentistComponent,
     ReviewComponent,
     ContactsComponent,
+    ServicesComponent,
+    SingleServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     AngularFireAuthModule,
     ProfileModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

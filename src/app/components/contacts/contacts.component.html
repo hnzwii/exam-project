@@ -24,28 +24,44 @@
   </div>
   <div class="title">BOOK AN APPOINTMENT</div>
 
-  <form action="">
+  <form action="" [formGroup]="contactForm" (ngSubmit)="send()">
     <div class="groupWrapper">
-      <input type="text" placeholder="FULLNAME" />
-      <input type="tel" name="" id="" placeholder="PHONE NUMBER" />
+      <input type="text" placeholder="FULLNAME" formControlName="fullname" />
+      <input
+        type="tel"
+        name=""
+        id=""
+        placeholder="PHONE NUMBER"
+        formControlName="phone"
+      />
     </div>
     <div class="groupWrapper">
-      <select name="" id="">
+      <select name="" id="" formControlName="dentist">
         <option *ngFor="let dentist of dentists" value="{{ dentist.fullname }}">
           {{ dentist.fullname }}
         </option>
       </select>
-      <select name="" id="">
-        <option
-          *ngFor="let service of services"
-          value="{{ service.serviceName }}"
-        >
+      <select name="" id="" formControlName="service" (blur)="getTypes()">
+        <option *ngFor="let service of services" [ngValue]="service">
           {{ service.serviceName }}
+        </option>
+      </select>
+      <select
+        name=""
+        id=""
+        formControlName="serviceType"
+        (click)="getTotalPrice()"
+      >
+        <option
+          *ngFor="let serviceType of servicesTypes"
+          [ngValue]="serviceType"
+        >
+          {{ serviceType.name }}
         </option>
       </select>
     </div>
     <div class="groupWrapper">
-      <input type="date" name="" id="" />
+      <input type="date" name="" id="" formControlName="date" />
       <span>TOTAL : {{ total | currency }}</span>
     </div>
     <button>Send</button>

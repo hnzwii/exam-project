@@ -6,7 +6,7 @@ export interface IService {
   id: number;
   types: Types[];
 }
-interface Types {
+export interface Types {
   name: string;
   price: number;
   definition: string;
