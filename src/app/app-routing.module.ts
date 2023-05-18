@@ -7,6 +7,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { ContactsComponent } from "./components/contacts/contacts.component";
 import { ServicesComponent } from "./components/services/services.component";
 import { SingleServiceComponent } from "./components/single-service/single-service.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -18,10 +19,7 @@ const routes: Routes = [
   },
   {
     path: "profile",
-    loadChildren: () =>
-      import("./components/profile/profile.module").then(
-        (m) => m.ProfileModule
-      ),
+    component: ProfileComponent,
     canActivate: [ProfileGuard],
   },
   { path: "about", component: AboutComponent },

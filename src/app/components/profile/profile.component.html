@@ -25,6 +25,19 @@
 
   <div class="appointmentInfo">
     <div class="title">Appointments</div>
-    <div class="appointmentsWrapper"></div>
+    <div class="appointmentsWrapper">
+      <div *ngFor="let appointment of appointments" class="card">
+        <div class="flex">
+          <div class="date">{{ appointment.info.date }}</div>
+          <div class="info">
+            <div class="service">{{ appointment.info.service }}</div>
+            <div class="type">{{ appointment.info.serviceType }}</div>
+            <div class="dentist">Dentist : {{ appointment.info.dentist }}</div>
+          </div>
+        </div>
+
+        <div class="price">{{ appointment.info.price | currency }}</div>
+      </div>
+    </div>
   </div>
 </div>

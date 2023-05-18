@@ -21,7 +21,7 @@ import { getFirestore, provideFirestore } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { getDatabase, provideDatabase } from "@angular/fire/database";
-import { ProfileModule } from "./components/profile/profile.module";
+import { ProfileComponent } from "./components/profile/profile.component";
 import { AboutComponent } from "./components/about/about.component";
 import { DentistComponent } from "./components/dentist/dentist.component";
 import { ReviewComponent } from "./components/review/review.component";
@@ -47,6 +47,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     ContactsComponent,
     ServicesComponent,
     SingleServiceComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,6 @@ import { ReactiveFormsModule } from "@angular/forms";
     provideDatabase(() => getDatabase()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    ProfileModule,
     NgxPaginationModule,
     ReactiveFormsModule,
   ],

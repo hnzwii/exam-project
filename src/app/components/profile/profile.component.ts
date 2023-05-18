@@ -1,7 +1,17 @@
 import { Component } from "@angular/core";
-import { Database, ref, set } from "@angular/fire/database";
+import {
+  Database,
+  equalTo,
+  onValue,
+  orderByChild,
+  orderByKey,
+  query,
+  ref,
+  set,
+} from "@angular/fire/database";
 import { AuthService } from "src/app/services/auth.service";
 import { DentalService } from "src/app/services/dental.service";
+import { IAppointment } from "src/app/shared/appointment";
 import { IUser } from "src/app/shared/user";
 
 @Component({
@@ -12,6 +22,7 @@ import { IUser } from "src/app/shared/user";
 export class ProfileComponent {
   user!: IUser;
   review: string | undefined;
+  appointments!: IAppointment[];
 
   constructor(
     private authService: AuthService,
@@ -20,6 +31,26 @@ export class ProfileComponent {
   ) {
     this.user = authService.user;
     console.log(this.user);
+  }
+
+  ngOnInit(): void {
+    const appointmentsRef = query(
+      ref(this.database, `appointments/`),
+      orderByChild("email"),
+      equalTo(this.user.email)
+    );
+    console.log(this.database, appointmentsRef);
+    onValue(appointmentsRef, (snapshot) => {
+      const data = snapshot.val();
+      console.log(this.database, data);
+
+      const mapped = Object.keys(data).map((key) => ({
+        email: data[key].email,
+        info: data[key].info,
+      }));
+      this.appointments = mapped;
+      console.log(this.appointments);
+    });
   }
 
   logout() {
@@ -31,7 +62,7 @@ export class ProfileComponent {
     console.log(this.review);
     const review = {
       email: this.authService.user.email,
-      review: this.review,
+      message: this.review,
     };
 
     const id = new Date().getTime();
