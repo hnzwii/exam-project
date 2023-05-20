@@ -80,6 +80,7 @@ export class ContactsComponent implements OnInit {
 
   send() {
     console.log(this.contactForm.value);
+    const id = new Date().getTime();
 
     const appointment = {
       email: this.authService.user.email,
@@ -89,9 +90,8 @@ export class ContactsComponent implements OnInit {
         serviceType: this.contactForm.value.serviceType?.name,
         price: this.contactForm.value.serviceType?.price,
       },
+      id,
     };
-
-    const id = new Date().getTime();
 
     set(ref(this.database, `appointments/${id}`), {
       ...appointment,

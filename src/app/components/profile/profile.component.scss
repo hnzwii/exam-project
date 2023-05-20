@@ -133,12 +133,27 @@
           color: hsla(190, 8%, 42%, 1);
         }
       }
+      .priceWrapper {
+        display: grid;
 
-      .price {
-        font-weight: 600;
-        font-size: 20px;
-        font-family: Dosis;
-        color: hsla(223, 26%, 21%, 1);
+        .price {
+          font-weight: 600;
+          font-size: 20px;
+          font-family: Dosis;
+          color: hsla(223, 26%, 21%, 1);
+        }
+
+        .deleteButton {
+          background-color: hsla(233, 28%, 50%, 1);
+          width: 30px;
+          height: 30px;
+          justify-self: end;
+          align-self: flex-end;
+          border-radius: 20px;
+          color: white;
+          font-weight: 600;
+          font-size: 20px;
+        }
       }
     }
   }

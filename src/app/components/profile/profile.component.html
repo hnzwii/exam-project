@@ -35,8 +35,15 @@
             <div class="dentist">Dentist : {{ appointment.info.dentist }}</div>
           </div>
         </div>
-
-        <div class="price">{{ appointment.info.price | currency }}</div>
+        <div class="priceWrapper">
+          <div class="price">{{ appointment.info.price | currency }}</div>
+          <button
+            class="deleteButton"
+            (click)="deleteAppointment(appointment.id)"
+          >
+            -
+          </button>
+        </div>
       </div>
     </div>
   </div>

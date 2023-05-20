@@ -7,6 +7,7 @@ import {
   orderByKey,
   query,
   ref,
+  remove,
   set,
 } from "@angular/fire/database";
 import { AuthService } from "src/app/services/auth.service";
@@ -22,7 +23,7 @@ import { IUser } from "src/app/shared/user";
 export class ProfileComponent {
   user!: IUser;
   review: string | undefined;
-  appointments!: IAppointment[];
+  appointments: IAppointment[] | undefined;
 
   constructor(
     private authService: AuthService,
@@ -44,12 +45,15 @@ export class ProfileComponent {
       const data = snapshot.val();
       console.log(this.database, data);
 
-      const mapped = Object.keys(data).map((key) => ({
-        email: data[key].email,
-        info: data[key].info,
-      }));
-      this.appointments = mapped;
-      console.log(this.appointments);
+      if (data) {
+        const mapped = Object.keys(data).map((key) => ({
+          email: data[key].email,
+          info: data[key].info,
+          id: data[key].id,
+        }));
+        this.appointments = mapped;
+        console.log(this.appointments);
+      }
     });
   }
 
@@ -73,5 +77,12 @@ export class ProfileComponent {
     });
 
     this.review = "";
+  }
+
+  deleteAppointment(id: number) {
+    console.log(id);
+
+    const appointmentsRef = ref(this.database, `appointments/${id}`);
+    remove(appointmentsRef);
   }
 }
